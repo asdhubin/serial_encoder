@@ -149,7 +149,6 @@ int main()
         return -1;
         break;
     }
-
         /*printf("value of buffer is %2d %2d %2d %2d %2d %2d \n\n",
         receivebuffer[0],
         receivebuffer[1],
@@ -161,14 +160,17 @@ int main()
     for(int i=0;i<4;i++){
 	    var[i]=receivebuffer[i+1];
     }
-    old_data=new_data;
-	new_data=(var[3]<<24)|(var[2]<<16)|(var[1]<<8)|(var[0]);
-    delta=new_data-old_data;
 
+
+    old_data=new_data;
+	if(receivebuffer[5]!=receivebuffer[0]+receivebuffer[1]+receivebuffer[2]+receivebuffer[3]receivebuffer[4]){
+        continue;
+    }
+	new_data=(var[3]<<24)|(var[2]<<16)|(var[1]<<8)|(var[0]);
+
+    delta=new_data-old_data;
 	test1.odo_add_mm(delta/revolution);
 	test1.odo_print();
-
-
     }
 
 
