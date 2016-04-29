@@ -9,10 +9,10 @@ class odometer{
 private:
     int positive_kilometer=0;
     int positive_meter=0;
-    int positive_milimeter=0;
+    float positive_milimeter=0;
     int negative_kilometer=0;
     int negative_meter=0;
-    int negative_milimeter=0;
+    float negative_milimeter=0;
 public:
     /*void odo_add_mm(int mm);
     void odo_add_m(int m);
@@ -25,7 +25,7 @@ public:
 *void odo_add_mm()
 *add XX milimeters to odometer
 */
-void odo_add_mm(int mm){
+void odo_add_mm(float mm){
     if(mm>=0){
         positive_milimeter+=mm;
         positive_meter    +=positive_milimeter/1000;
