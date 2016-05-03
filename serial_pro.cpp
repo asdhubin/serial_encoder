@@ -92,7 +92,7 @@ int main()
 
 
     /*CHANGES*/
-    if(!0)//set_interface_attribs(fd, B9600, 0)!=0)
+    if(set_interface_attribs(fd, B9600, 0)!=0)
     {            printf("hello");
         printf("error set interface\n");
     }
