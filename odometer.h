@@ -5,6 +5,7 @@
 *km,m,mm
 */
 #include <iostream>
+#include <math.h>
 class odometer{
 private:
     int positive_kilometer=0;
@@ -31,14 +32,14 @@ void odo_add_mm(float mm){
         positive_meter    +=positive_milimeter/1000;
         positive_kilometer =positive_meter/1000;
         positive_meter     =positive_meter%1000;
-        positive_milimeter =positive_milimeter%1000;
+        positive_milimeter =fmod(positive_milimeter,1000);
     }
     else if(mm<0){
         negative_milimeter+=mm;
         negative_meter    +=negative_milimeter/1000;
         negative_kilometer =negative_meter/1000;
         negative_meter     =negative_meter%1000;
-        negative_milimeter =negative_milimeter%1000;
+        negative_milimeter =fmod(negative_milimeter,1000);
     }
 }
 /**
@@ -46,20 +47,20 @@ void odo_add_mm(float mm){
 *add XX meters to odometer
 */
 void odo_add_m(float m){
-    int a=m;//ȡ��
+    int a=m;//È¡Õû
     if(m>=0){
         positive_milimeter+=(m-a)*1000;
         positive_meter     = positive_meter + a +(positive_milimeter/1000);
         positive_kilometer = positive_meter/1000;
         positive_meter     = positive_meter%1000;
-        positive_milimeter = positive_milimeter%1000;
+        positive_milimeter =fmod(positive_milimeter,1000);
     }
     else if(m<0){
         negative_milimeter+=(m-a)*1000;
         negative_meter     = negative_meter + a +(negative_milimeter/1000);
         negative_kilometer = negative_meter/1000;
         negative_meter     = negative_meter%1000;
-        negative_milimeter = negative_milimeter%1000;
+        negative_milimeter =fmod(negative_milimeter,1000);
     }
 }
 /**
