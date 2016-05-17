@@ -136,7 +136,7 @@ int main()
     unsigned char A5A5[2];A5A5[0]=0xA5;A5A5[1]=0xA5;
 
     int old_data=0;int new_data=0;
-    int delta;
+    float delta;
     class odometer test1;
     unsigned char var[4];//for saving 4bytes raw data
 
