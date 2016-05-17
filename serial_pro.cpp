@@ -163,7 +163,7 @@ int main()
 
 
     old_data=new_data;
-	if(receivebuffer[5]!=receivebuffer[0]+receivebuffer[1]+receivebuffer[2]+receivebuffer[3]receivebuffer[4]){
+	if(receivebuffer[5]!=receivebuffer[0]+receivebuffer[1]+receivebuffer[2]+receivebuffer[3]+receivebuffer[4]){
         continue;
     }
 	new_data=(var[3]<<24)|(var[2]<<16)|(var[1]<<8)|(var[0]);
