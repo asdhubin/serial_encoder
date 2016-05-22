@@ -141,6 +141,7 @@ int main()
     unsigned char var[4];//for saving 4bytes raw data
 
     while(1){
+    	start = std::clock();//起始时间
         write (fd,A5A5 , 2);
 
         usleep (3000);
@@ -171,6 +172,8 @@ int main()
     delta=new_data-old_data;
 	test1.odo_add_mm(delta/revolution);
 	test1.odo_print();
+	duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;//一次循环计算所花费的时间
+        usleep(10000-duration*10^6);//等待满10ms
     }
 
 
